@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Internal - my wee tab icon -->
+        <link href="/static/favicon/favicon.ico" rel="icon">
+        <!-- Internal - my CSS style sheet -->
+        <link href="/static/css/styles.css" rel="stylesheet">
+        <link href="/static/css/form_modal.css" rel="stylesheet">
+
+        <!--Internal - My JavaScript files -->
+        <script href="/JavaScript/updateData.js"></script>
+
+        <!-- External - Data Table Items -->
+        <!-- External - DataTable JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+        <script src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+
+        <!-- External - Bootstrap CSS links -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/datatables.min.css"/>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/datatables.min.js"></script>
+
+
+        <!-- External - Datatable button links -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+
+
+        <title>{% block title %}{% endblock %}</title>
+
+    </head>
+
+    <body class="bg">
+
+        <nav class="navbar navbar-dark navbar-expand-md">
+          <a class="navbar-brand" href="/">TASKFLOAT</a>
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+              <ul class="navbar-nav mr-auto mt-2">
+                  {% if session.user_id %}
+                  <li class="nav-item"><a class="nav-link" href="/tasks"><b>tasks</b></a></li>
+                  <li class="nav-item"><a class="nav-link" href="/complete">complete</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/logout">logout</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/account">account</a></li>
+                  {% else %}
+                  <li class="nav-item"><a class="nav-link" href="/">home</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/login">login</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/register">register</a></li>
+                  {% endif %}
+              </ul>
+            </div>
+        </nav>
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+
+        <main class="p-5">
+            {% block main %}{% endblock %}
+        </main>
+
+        <footer class="footer">
+            Copyright © 2020 Daniel O'Dowd
+        </footer>
+    </body>
+
+</html>

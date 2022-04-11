@@ -1,0 +1,134 @@
+/*
+--rich-black-fogra-29: #121619ff;
+--xanadu: #5f7367ff;
+--fire-opal: #f26157ff;
+--snow: #fffbffff;
+--bone: #d0cebaff;
+*/
+
+.navbar {
+  background-color: #0D1321;
+}
+
+
+.nav-link
+{
+  opacity: 1;
+}
+.nav-link:hover
+{
+  opacity: 1;
+  color: #D0CEBA !important;
+}
+
+.nonButtonLinks
+{
+  opacity: 1;
+  color: #d0cebaff;
+}
+.nonButtonLinks:hover
+{
+  opacity: 1;
+  color: #5f7367ff;
+}
+
+main
+{
+    /* center contents */
+    text-align: center;
+
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+
+    align: center:
+
+}
+
+body, html {
+  height: 100%;
+}
+
+.bg {
+  /* background color for site */
+  background-color: #FFFBFF;
+
+
+  /* Center and scale the image nicely */
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer {
+  /*small text-center text-muted*/
+  position: fixed;
+  left: 0;
+  bottom: 2%;
+  width: 100%;
+  color: #5F7367;
+  text-align: center;
+  opacity: 1;
+  font-size: small;
+}
+
+.h3 {
+  margin: 0 auto;
+  text-align: center;
+  color: #1D2D44 !important;
+  text-align: center;
+}
+
+.textbox_01 {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
+
+.textBox {
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+  color: black;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+}
+
+table {
+    background: white;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 6px;
+    width: 50%;
+    border-spacing: 0px;
+    border-collapse: separate;
+    text-align: left;
+}
+
+th, td {
+  border-bottom: 1px solid #ddd;
+}
+
+td:hover {
+  color: red;
+}
+
+
+.dataTables_filter {
+  letter-spacing: 0.5px;
+}
+
+
+.dt-button {
+  border-radius: 6px !important;
+}

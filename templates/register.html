@@ -1,0 +1,73 @@
+<!-- TODO: run through CS50 code check thing when complete -->
+{% extends "layout.html" %}
+
+{% block title %}
+    register
+{% endblock%}
+
+{% block main %}
+<h3>
+  <span class="h3">register</span>
+</h3>
+<form action="/register" method="post" class="needs-validation" novalidate>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="username" type="text" required>
+            <div class="invalid-feedback">username required</div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="password" type="password" required>
+            <div class="invalid-feedback">password required</div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="confirm password" type="password" required>
+            <div class="invalid-feedback">confirm password</div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="first_name" placeholder="first name" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="last_name" placeholder="last name" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="user_email" placeholder="email" type="email" required>
+            <div class="invalid-feedback">email required</div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="user_company" placeholder="company" type="text">
+        </div>
+        <div class="form-check">
+          <div class="textbox_01">
+            Check the box below to agree to the terms and conditions
+          </div>
+          <input type="checkbox" name="user_confirmation" class="form-check-input" required>
+          <p></p>
+          <div class="invalid-feedback">please confirm you agree to the terms and conditions</div>
+          <label class="form-check-label" for="exampleCheck1">
+            <p></p>
+          </label>
+        </div>
+        <button class="btn btn-outline-secondary" type="submit">Register</button>
+    </form>
+
+    <script>
+    // Disable form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Get the forms we want to add validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+
+{% endblock %}

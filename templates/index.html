@@ -1,0 +1,24 @@
+<!-- TODO: run through CS50 code check thing when complete -->
+{% extends "layout.html" %}
+
+{% block title %}
+    home
+{% endblock%}
+
+{% block main %}
+    <h3>
+      <span class="h3">welcome!</span>
+    </h3>
+    <p>
+
+    </p>
+    {% if session.user_id %}
+      <p><a class="nonButtonLinks" href="/logout">logout</a></p>
+    {% else %}
+      <p><a class="nonButtonLinks" href="/login">login</a></p>
+      <p><a class="nonButtonLinks" href="/register"> (or register here) </a></p>
+      <div class="textbox_01">
+    {% endif %}
+
+    </div>
+{% endblock %}

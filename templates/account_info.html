@@ -1,0 +1,45 @@
+<!-- TODO: run through CS50 code check thing when complete -->
+{% extends "layout.html" %}
+
+{% block title %}
+    account
+{% endblock%}
+
+{% block main %}
+    <! –– TODO: need to add a bootstrap table here - very useful for the user! ––>
+    <h3 class="mb-3">account</h3>
+    <ul>
+        <table id=transactionHist class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">first name</th>
+                    <th scope="col">last name</th>
+                    <th scope="col">email</th>
+                    <th scope="col">company</th>
+                    <th scope="col">verified</th>
+                    <th scope="col">timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in info %}
+                    <tr>
+                      <td id="start_time">{{ i['id'] }}</td>
+                      <td id="end_time">{{ i['first_name'] }}</td>
+                      <td id="job_number">{{ i['last_name'] }}</td>
+                      <td id="task">{{ i['email'] }}</td>
+                      <td id="importance">{{ i['company'] }}</td>
+                      <td id="deadline">{{ i['verified'] }}</td>
+                      <td id="deadline">{{ i['timestamp'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </ul>
+    <script>
+        // Need to add this per page I want the Bootstrap DataTable
+        $(document).ready(function() {
+            $('#transactionHist').DataTable();
+        } );
+    </script>
+{% endblock %}

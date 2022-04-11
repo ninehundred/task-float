@@ -1,0 +1,56 @@
+<!-- TODO: run through CS50 code check thing when complete -->
+{% extends "layout.html" %}
+
+{% block title %}
+    complete
+{% endblock%}
+
+{% block main %}
+    <! –– TODO: need to add a bootstrap table here - very useful for the user! ––>
+
+    <h3 class="mb-3">complete</h3>
+    <div>
+
+      <p><button class="btn btn-outline-secondary" type="submit">reinstate task</button></p>
+      <table id=tasktable class="table table-hover" >
+
+        <thead class="tablehead">
+          <tr>
+            <th>reinstate</th>
+            <th>start time</th>
+            <th>end time</th>
+            <th>job number</th>
+            <th>task description</th>
+            <th>importance</th>
+            <th>deadline</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for task in tasks %}
+            <tr id=table_row>
+                <td id="complete"><input type="checkbox" name="complete"> </td>
+                <td id="start_time">{{ task['start_time'] }}</td>
+                <td id="end_time">{{ task['end_time'] }}</td>
+                <td id="job_number">{{ task['job_number'] }}</td>
+                <td id="task">{{ task['task'] }}</td>
+                <td id="importance">{{ task['importance'] }}</td>
+                <td id="deadline">{{ task['deadline'] }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% if tasks|length == 0 %}
+      <p><a class="nonButtonLinks">no tasks yet - lucky you!</a></p>
+    {% endif %}
+
+
+
+    <script>
+        // Need to add this per page I want the Bootstrap DataTable
+        $(document).ready(function() {
+            $('#transactionHist').DataTable();
+        } );
+    </script>
+{% endblock %}
